@@ -1,0 +1,15 @@
+[target.xtensa-esp32-none-elf]
+runner = "espflash flash --partition-table partitions.csv --flash-size 4mb --baud 921600 --monitor"
+# baud rate (230400,460800,691200,921600)
+# --flash-freq 80mhz
+[env]
+ESP_LOG = "INFO"
+GATEWAY_IP = "1.1.1.1"
+
+[build]
+rustflags = ["-C", "link-arg=-nostartfiles"]
+
+target = "xtensa-esp32-none-elf"
+
+[unstable]
+build-std = ["alloc", "core"]

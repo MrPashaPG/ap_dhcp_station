@@ -1,0 +1,27 @@
+# Use custom partition table
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+
+# Flash size (4MB)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+
+# Increase stack and heap sizes for better performance
+CONFIG_ESP_MAIN_TASK_STACK_SIZE=8192
+CONFIG_ESP_SYSTEM_EVENT_TASK_STACK_SIZE=4096
+
+# Optimize for speed
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# Enable support for SPIFFS (for storage partition)
+CONFIG_SPIFFS_PAGE_SIZE=256
+CONFIG_SPIFFS_OBJ_NAME_LEN=32
+CONFIG_SPIFFS_USE_MAGIC=y
+CONFIG_SPIFFS_USE_MAGIC_LENGTH=y
+
+# WiFi settings 
+CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM=16
+CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM=32
+
+# Disable watchdog timers during development (enable in production)
+# CONFIG_INT_WDT=n
+# CONFIG_ESP_TASK_WDT=n 
